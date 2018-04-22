@@ -36,7 +36,12 @@ class MonitorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $monitor = new Monitor($request->all());
+        $monitor->save();
+
+        flash('Usuario agregado satisfactoriamente')->success();
+
+        return redirect()->route('monitores.index');
     }
 
     /**

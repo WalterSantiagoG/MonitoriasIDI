@@ -18,7 +18,7 @@
     <!-- Begin page content -->
     <main role="main" class="container">
       <div align="center">
-        <h1 class="mt-5">Monitorias IDI</h1>
+        <h1 class="mt-5">Monitorias I+D+I</h1>
       </div>
     </main>
     <div>

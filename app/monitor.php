@@ -8,5 +8,5 @@ class Monitor extends Model
 {
     protected $table = 'monitors';
 
-    protected $fillable = ['nombres','apellidos','	programa_academico','semestre',	'cedula','email','telefono','celular'];
+    protected $fillable = ['nombres','apellidos','programa_academico','semestre',	'cedula','email','telefono','celular'];
 }
