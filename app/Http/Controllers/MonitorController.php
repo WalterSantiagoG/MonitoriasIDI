@@ -25,7 +25,7 @@ class MonitorController extends Controller
      */
     public function create()
     {
-        //
+        return view('monitores/create');
     }
 
     /**
@@ -81,6 +81,13 @@ class MonitorController extends Controller
      */
     public function destroy($id)
     {
-        //
+
+        $monitor = Monitor::where('IdMonitor', $id);
+     
+        $monitor->delete();
+
+        flash('Usuario eliminado satisfactoriamente')->success();
+
+        return redirect()->route('monitores.index');
     }
 }
