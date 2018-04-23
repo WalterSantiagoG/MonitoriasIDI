@@ -52,6 +52,19 @@
           "autoWidth": false,  
         });
     });
+    $(document).ready(function() {
+        $('#monitorias-table').DataTable({
+          "scrollY":        "200px",
+          "scrollX":        "200px",
+          "scrollCollapse": true,
+          "paging": false,
+          "lengthChange": false,
+          "searching": false,
+          "ordering": true,
+          "info": true,
+          "autoWidth": false,  
+        });
+    });
   </script>
 </body>
 </html>

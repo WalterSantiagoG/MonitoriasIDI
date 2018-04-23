@@ -3,7 +3,7 @@
 @section('content')      
       <h4>Listado de monitores</h4>
       @include('flash::message')
-      <table id="monitors-table" class="display" style="width:100%; font-size: 85%">
+      <table id="monitors-table" class="display" style="width:100%;">
         <thead>
             <tr align="center">
                 <th>Nombres</th>
@@ -32,18 +32,41 @@
               <td> {{ $Monitor->celular }} </td>
               <td> {{ $Monitor->created_at }} </td>
               <td>
-                <a href="{{ route('monitors.edit', $Monitor->IdMonitor) }}" class="btn btn-xs btn-info">
-                  <i class="fa fa-pencil"></i>
-                </a>
-                <a href="{{ route('monitors.destroy', $Monitor->IdMonitor) }}" onclick="return confirm('¿Seguro de deseas eliminarlo? Recuerda que tambien se eliminaran las monitorias asignadas a este monitor')" class="btn btn-xs btn-danger">
-                  <i class="fa fa-times" aria-hidden="true"></i>
-                </a>
+                <div class="row">
+                  <div class="col-xs-6 col-sm-6 col-lg-6">
+                    <a href="{{ route('monitors.edit', $Monitor->IdMonitor) }}" class="btn btn-xs btn-info">
+                      <i class="fa fa-pencil"></i>
+                    </a>
+                  </div>
+                  <div class="col-xs-6 col-sm-6 col-lg-6">
+                    <a href="{{ route('monitors.destroy', $Monitor->IdMonitor) }}" onclick="return confirm('¿Seguro de deseas eliminarlo? Recuerda que tambien se eliminaran las monitorias asignadas a este monitor')" class="btn btn-xs btn-danger">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                  </a>
+                  </div>
+                </div>
+                
+                
               </td>
             </tr> 
     
           @endforeach
         </tbody>
       </table>
-@stop
 
-   
+      <br><br><br>
+      <h4>Listado de monitorias</h4>
+      <table id="monitorias-table" class="display" style="width:100%">
+        <thead>
+            <tr align="center">
+                <th>Monitor</th>
+                <th>Materia</th>
+                <th>Fecha</th>
+                <th>Salon</th>
+                <th>Fecha creación</th>
+            </tr>
+        </thead>
+        <tbody align="center">
+          
+        </tbody>
+      </table>
+@stop
