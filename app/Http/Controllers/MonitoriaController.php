@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Monitoria;
 use App\Monitor;
+use App\Http\Requests\MonitoriaRequest;
 
 class MonitoriaController extends Controller
 {
@@ -35,7 +36,7 @@ class MonitoriaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(MonitoriaRequest $request)
     {
         $monitoria = new Monitoria($request->all());
         $monitoria->save();
