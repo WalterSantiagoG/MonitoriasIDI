@@ -39,7 +39,7 @@ class MonitorController extends Controller
         $monitor = new Monitor($request->all());
         $monitor->save();
 
-        flash('Usuario agregado satisfactoriamente')->success();
+        flash('Monitor agregado satisfactoriamente')->success();
 
         return redirect()->route('monitores.index');
     }
@@ -63,7 +63,9 @@ class MonitorController extends Controller
      */
     public function edit($id)
     {
-        //
+        $monitor = Monitor::where('IdMonitor', $id)->get()->first();
+        //dd($monitor);
+        return view('monitores/edit')->with('Monitor', $monitor);
     }
 
     /**
@@ -75,7 +77,23 @@ class MonitorController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $monitor = Monitor::where('IdMonitor', $id)->get()->first();
+        $monitor->nombres               = $request->nombres;
+        $monitor->apellidos             = $request->apellidos;
+        $monitor->programa_academico    = $request->programa_academico;
+        $monitor->semestre              = $request->semestre;
+        $monitor->cedula                = $request->cedula;
+        $monitor->email                 = $request->email;
+        $monitor->telefono              = $request->telefono;
+        $monitor->celular               = $request->celular;
+
+        $monitor->save();
+
+        flash('Monitor '.$monitor->nombres.' actualizado satisfactoriamente')->success();
+
+        return redirect()->route('monitores.index');
+
+
     }
 
     /**

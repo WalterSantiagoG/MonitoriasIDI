@@ -32,7 +32,7 @@
               <td> {{ $Monitor->celular }} </td>
               <td> {{ $Monitor->created_at }} </td>
               <td>
-                <a href="{{ route('monitors.edit', $Monitor) }}" class="btn btn-xs btn-info">
+                <a href="{{ route('monitors.edit', $Monitor->IdMonitor) }}" class="btn btn-xs btn-info">
                   <i class="fa fa-pencil"></i>
                 </a>
                 <a href="{{ route('monitors.destroy', $Monitor->IdMonitor) }}" onclick="return confirm('¿Seguro de deseas eliminarlo? Recuerda que tambien se eliminaran las monitorias asignadas a este monitor')" class="btn btn-xs btn-danger">
