@@ -17,6 +17,7 @@ Route::get('/', function () {
 
 Route::get('monitores', 'MonitorController@index')->name('monitores.index');
 Route::resource('monitors', 'MonitorController');
+Route::post('listarmonitorias', 'MonitoriaController@listarmonitorias');
 Route::get('monitors/{id}/destroy',[
 	'uses' => 'MonitorController@destroy',
 	'as'   => 'monitors.destroy'

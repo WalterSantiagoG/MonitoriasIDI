@@ -20,7 +20,7 @@
         </thead>
         <tbody align="center" style="cursor: pointer;">
           @foreach($Monitor as $Monitor)
-            <tr id="{{ $Monitor->id_sed }}">
+            <tr id="{{ $Monitor->IdMonitor }}">
 
               <td> {{ $Monitor->nombres }} </td>
               <td> {{ $Monitor->apellidos }} </td>
@@ -34,12 +34,12 @@
               <td>
                 <div class="row">
                   <div class="col-xs-6 col-sm-6 col-lg-6">
-                    <a href="{{ route('monitors.edit', $Monitor->IdMonitor) }}" class="btn btn-xs btn-info">
+                    <a href="{{ route('monitors.edit', $Monitor->IdMonitor) }}" id="accion" class="btn btn-xs btn-info">
                       <i class="fa fa-pencil"></i>
                     </a>
                   </div>
                   <div class="col-xs-6 col-sm-6 col-lg-6">
-                    <a href="{{ route('monitors.destroy', $Monitor->IdMonitor) }}" onclick="return confirm('¿Seguro de deseas eliminarlo? Recuerda que tambien se eliminaran las monitorias asignadas a este monitor')" class="btn btn-xs btn-danger">
+                    <a href="{{ route('monitors.destroy', $Monitor->IdMonitor) }}" id="accion" onclick="return confirm('¿Seguro de deseas eliminarlo? Recuerda que tambien se eliminaran las monitorias asignadas a este monitor')" class="btn btn-xs btn-danger">
                     <i class="fa fa-times" aria-hidden="true"></i>
                   </a>
                   </div>

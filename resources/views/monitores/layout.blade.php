@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="author" content="Walter Jesus Santiago Gonzalez">
   <title>Monitores</title>
+  <meta name="csrf-token" content="{{ csrf_token() }}">
   <link rel="stylesheet" type="text/css" href="{{ asset('bootstrap4/css/bootstrap.min.css') }}">
   <link href="{{ asset('css/style.css') }}" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.16/datatables.min.css"/>
@@ -37,6 +38,7 @@
   <script type="text/javascript" src="{{ asset('bootstrap4/js/bootstrap.min.js') }}"></script>
   <script type="text/javascript" src="{{ asset('bootstrap4/js/popper.min.js') }}"></script>
   <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.16/datatables.min.js"></script>
+  <script type="text/javascript" src="{{ asset('js/monitores.js') }}"></script>
 
   <script type="text/javascript">
     $(document).ready(function() {
