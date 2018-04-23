@@ -13,7 +13,7 @@
               <a class="nav-link" href="{{ route('monitors.create') }}">Crear monitor</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Crear monitoria</a>
+              <a class="nav-link" href="{{ route('monitorias.create') }}">Crear monitoria</a>
             </li>
           </ul>
         </div>

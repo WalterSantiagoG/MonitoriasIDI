@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Monitoria;
+use App\Monitor;
 
 class MonitoriaController extends Controller
 {
@@ -24,7 +25,8 @@ class MonitoriaController extends Controller
      */
     public function create()
     {
-        //
+        $Monitor = Monitor::all();
+        return view('monitores/monitorias/create')->with('Monitor', $Monitor);
     }
 
     /**
@@ -35,7 +37,12 @@ class MonitoriaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $monitoria = new Monitoria($request->all());
+        $monitoria->save();
+
+        flash('Monitoria agregada satisfactoriamente')->success();
+
+        return redirect()->route('monitores.index');
     }
 
     public function listarmonitorias (Request $request)
@@ -43,7 +50,6 @@ class MonitoriaController extends Controller
         if ($request->ajax()) {
 
             $monitoria = Monitoria::where('IdMonitor', $request->id)->get();
-            //$separaciones = DB::connection('sqlsrv')->select("SET NOCOUNT ON; EXEC SeparacionDeRepuestosPorBodegaStock 131");
 
             return $monitoria;
         }   

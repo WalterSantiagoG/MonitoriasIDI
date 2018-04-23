@@ -22,3 +22,4 @@ Route::get('monitors/{id}/destroy',[
 	'uses' => 'MonitorController@destroy',
 	'as'   => 'monitors.destroy'
 ]);
+Route::resource('monitorias', 'MonitoriaController');

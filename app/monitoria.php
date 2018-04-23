@@ -8,5 +8,5 @@ class Monitoria extends Model
 {
     protected $table = 'monitorias';
 
-    protected $fillable = ['IdMonitor','materia','	fecha','salon'];
+    protected $fillable = ['IdMonitor','materia','fecha','salon'];
 }
