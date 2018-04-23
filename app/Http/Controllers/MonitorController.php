@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Monitor;
+use App\Http\Requests\MonitorRequest;
+use App\Http\Requests\UpdateMonitorRequest;
 
 class MonitorController extends Controller
 {
@@ -34,7 +36,7 @@ class MonitorController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(MonitorRequest $request)
     {
         $monitor = new Monitor($request->all());
         $monitor->save();
@@ -75,7 +77,7 @@ class MonitorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateMonitorRequest $request, $id)
     {
         $monitor = Monitor::where('IdMonitor', $id)->get()->first();
         $monitor->nombres               = $request->nombres;
